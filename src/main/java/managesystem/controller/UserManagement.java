@@ -25,14 +25,12 @@ public class UserManagement {
     @ResponseBody
     @RequestMapping("/users_get_onepage")
     public ResponseEntities<List<User>> usersShowOnePage(Integer preNum){
-        System.out.println("收到一页请求!");
         return iUserService.usersShowOnePage(preNum);
     }
 
     @ResponseBody
     @RequestMapping("/users_get_count")
     public ResponseEntities<Integer> usersCount(){
-        System.out.println("收到总数请求!");
         return iUserService.usersCount(null,null);
     }
 
@@ -57,7 +55,6 @@ public class UserManagement {
     @ResponseBody
     @RequestMapping("/admin_get_count")
     public ResponseEntities<Integer> adminsCount(){
-        System.out.println("收到管理员总数请求!");
         return iUserService.usersCount(1,2);
     }
 
@@ -70,7 +67,6 @@ public class UserManagement {
     @ResponseBody
     @RequestMapping("/common_get_count")
     public ResponseEntities<Integer> commonsCount(Integer lowBound,Integer highBound){
-        System.out.println("收到使用人员总数请求!");
         return iUserService.usersCount(3,3);
     }
 
@@ -90,7 +86,6 @@ public class UserManagement {
     @ResponseBody
     @RequestMapping("/users_update")
     public ResponseEntities<Boolean> usersUpdate(User user){
-        System.out.println(user);
         return iUserService.updateUser(user);
     }
 

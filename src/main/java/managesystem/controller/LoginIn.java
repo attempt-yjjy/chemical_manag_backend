@@ -27,6 +27,7 @@ public class LoginIn {
 
     @ModelAttribute
     public User translate(String username, String password,Integer identity_type){
+        System.out.println("translate起作用!");
         User user = new User();
         user.setUsername(username);
         user.setPassword(password);
