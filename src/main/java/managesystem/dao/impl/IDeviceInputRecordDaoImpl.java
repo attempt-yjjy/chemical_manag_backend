@@ -34,7 +34,7 @@ public class IDeviceInputRecordDaoImpl implements IDeviceInputRecordDao {
 
     @Override
     public List<DeviceInputRecord> findByPage(Integer preNum) {
-        List<DeviceInputRecord> records = jdbcTemplate.query("select * from chemical_input_record limit ?,10",new BeanPropertyRowMapper<DeviceInputRecord>(DeviceInputRecord.class),preNum);
+        List<DeviceInputRecord> records = jdbcTemplate.query("select * from device_input_record limit ?,10",new BeanPropertyRowMapper<DeviceInputRecord>(DeviceInputRecord.class),preNum);
         return records;
     }
 

@@ -36,4 +36,10 @@ public class IChemicalInputRecordServiceImpl implements IChemicalInputRecordServ
         List<ChemicalInputRecord> records = iChemicalInputRecordDao.findFuzzyByPage(pattern,preNum);
         return new ResponseEntities<List<ChemicalInputRecord>>(true,records,1);
     }
+
+    @Override
+    public ResponseEntities<Boolean> insertChemicalInputRecord(ChemicalInputRecord chemicalInputRecord) {
+        Boolean result = iChemicalInputRecordDao.insertChemicalInputRecord(chemicalInputRecord);
+        return new ResponseEntities<Boolean>(result,result,1);
+    }
 }

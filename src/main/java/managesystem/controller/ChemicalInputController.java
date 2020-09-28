@@ -38,4 +38,10 @@ public class ChemicalInputController {
     public ResponseEntities<List<ChemicalInputRecord>> chemical_input_record_fuzzy_one_page(String pattern,Integer preNum){
         return iChemicalInputRecordService.findFuzzyOnePage(pattern,preNum);
     }
+
+    @ResponseBody
+    @RequestMapping("/chemical_input_record_insert")
+    public ResponseEntities<Boolean> chemical_input_record_insert(ChemicalInputRecord chemicalInputRecord){
+        return iChemicalInputRecordService.insertChemicalInputRecord(chemicalInputRecord);
+    }
 }

@@ -12,4 +12,6 @@ public interface IChemicalInputRecordService {
 
     ResponseEntities<Integer> findFuzzyCount(String pattern);
     ResponseEntities<List<ChemicalInputRecord>> findFuzzyOnePage(String pattern,Integer preNum);
+
+    ResponseEntities<Boolean> insertChemicalInputRecord(ChemicalInputRecord chemicalInputRecord);
 }

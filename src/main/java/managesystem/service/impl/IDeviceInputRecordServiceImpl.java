@@ -36,4 +36,10 @@ public class IDeviceInputRecordServiceImpl implements IDeviceInputRecordService 
         List<DeviceInputRecord> records = iDeviceInputRecordDao.findFuzzyByPage(pattern,preNum);
         return new ResponseEntities<List<DeviceInputRecord>>(true,records,1);
     }
+
+    @Override
+    public ResponseEntities<Boolean> insertDeviceInputRecord(DeviceInputRecord deviceInputRecord) {
+        Boolean result = iDeviceInputRecordDao.insertDeviceInputRecord(deviceInputRecord);
+        return new ResponseEntities<Boolean>(result,result,1);
+    }
 }

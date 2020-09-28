@@ -11,4 +11,6 @@ public interface IDeviceInputRecordService {
 
     ResponseEntities<Integer> findFuzzyCount(String pattern);
     ResponseEntities<List<DeviceInputRecord>> findFuzzyOnePage(String pattern,Integer preNum);
+
+    ResponseEntities<Boolean> insertDeviceInputRecord(DeviceInputRecord deviceInputRecord);
 }

@@ -1,5 +1,6 @@
 package managesystem.controller;
 
+import managesystem.entities.ChemicalInputRecord;
 import managesystem.entities.DeviceInputRecord;
 import managesystem.entities.logic.ResponseEntities;
 import managesystem.service.IDeviceInputRecordService;
@@ -38,5 +39,11 @@ public class DeviceInputController {
     @RequestMapping("/device_input_record_fuzzy_one_page")
     public ResponseEntities<List<DeviceInputRecord>> device_input_record_fuzzy_one_page(String pattern,Integer preNum){
         return iDeviceInputRecordService.findFuzzyOnePage(pattern,preNum);
+    }
+
+    @ResponseBody
+    @RequestMapping("/device_input_record_insert")
+    public ResponseEntities<Boolean> device_input_record_insert(DeviceInputRecord deviceInputRecord){
+        return iDeviceInputRecordService.insertDeviceInputRecord(deviceInputRecord);
     }
 }
