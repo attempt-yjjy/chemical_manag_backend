@@ -5,6 +5,7 @@ import managesystem.entities.logic.ResponseEntities;
 import managesystem.service.IDeviceOutputApplyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -18,7 +19,7 @@ public class DeviceOutputApplyController {
 
     @RequestMapping("/submit_apply")
     @ResponseBody
-    public ResponseEntities<Boolean> submit_apply(List<DeviceOutputApply> applies){
+    public ResponseEntities<Boolean> submit_apply(@RequestBody List<DeviceOutputApply> applies){
 
         return iDeviceOutputApplyService.addApply(applies);
     }
