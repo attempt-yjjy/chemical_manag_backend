@@ -11,6 +11,7 @@ public class DeviceOutputApply implements Serializable {
     private Date output_time;
     private String proposer;
     private Integer pro_id;
+    private Integer state;
 
     public Integer getId() {
         return id;
@@ -68,6 +69,14 @@ public class DeviceOutputApply implements Serializable {
         this.pro_id = pro_id;
     }
 
+    public Integer getState() {
+        return state;
+    }
+
+    public void setState(Integer state) {
+        this.state = state;
+    }
+
     @Override
     public String toString() {
         return "DeviceOutputApply{" +
@@ -78,6 +87,7 @@ public class DeviceOutputApply implements Serializable {
                 ", output_time=" + output_time +
                 ", proposer='" + proposer + '\'' +
                 ", pro_id=" + pro_id +
+                ", state=" + state +
                 '}';
     }
 }

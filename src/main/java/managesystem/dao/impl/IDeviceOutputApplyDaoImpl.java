@@ -26,7 +26,7 @@ public class IDeviceOutputApplyDaoImpl implements IDeviceOutputApplyDao {
 
     @Override
     public Boolean insertApply(DeviceOutputApply apply) {
-        Integer result = jdbcTemplate.update("insert into device_output_apply(de_name,de_type,count,output_time,proposer,pro_id) values(?,?,?,?,?,?)",apply.getDe_name(),apply.getDe_type(),apply.getCount(),apply.getOutput_time(),apply.getProposer(),apply.getPro_id());
+        Integer result = jdbcTemplate.update("insert into device_output_apply(de_name,de_type,count,output_time,proposer,pro_id,state) values(?,?,?,?,?,?,?)",apply.getDe_name(),apply.getDe_type(),apply.getCount(),apply.getOutput_time(),apply.getProposer(),apply.getPro_id(),apply.getState());
         if(result == 1){
             return true;
         }

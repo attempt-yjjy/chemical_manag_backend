@@ -26,7 +26,7 @@ public class IChemicalOutputApplyDaoImpl implements IChemicalOutputApplyDao {
 
     @Override
     public Boolean insertApply(ChemicalOutputApply apply) {
-        Integer result = jdbcTemplate.update("insert into chemical_output_apply(ch_name,ch_type,count,output_time,proposer,pro_id) values(?,?,?,?,?,?)",apply.getCh_name(),apply.getCh_type(),apply.getCount(),apply.getOutput_time(),apply.getProposer(),apply.getPro_id());
+        Integer result = jdbcTemplate.update("insert into chemical_output_apply(ch_name,ch_type,count,output_time,proposer,pro_id,state) values(?,?,?,?,?,?,?)",apply.getCh_name(),apply.getCh_type(),apply.getCount(),apply.getOutput_time(),apply.getProposer(),apply.getPro_id(),apply.getState());
         if(result == 1){
             return true;
         }
